@@ -25,6 +25,8 @@ namespace PlatformService.Data
                         new Models.Platform() { Name = "Sql Server Express", Publisher = "Microsoft", Cost = "Free" },
                         new Models.Platform() { Name = "Kubernetes", Publisher = "Cloud Native Computing Foundation", Cost = "Free" }
                     );
+
+                context.SaveChanges();
             }
             else
             {
