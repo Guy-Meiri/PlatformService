@@ -32,8 +32,7 @@ namespace PlatformService.Controllers
         public ActionResult<PlatformReadDto> GetPlatformById(int id)
         {
             var platformItem = _repository.GetPlatformById(id);
-
-            if(platformItem != null)
+            if (platformItem != null)
             {
                 return Ok(_mapper.Map<PlatformReadDto>(platformItem));
             }
@@ -50,8 +49,8 @@ namespace PlatformService.Controllers
 
             var platformReadDto = _mapper.Map<PlatformReadDto>(platform);
 
-
-            return CreatedAtRoute(nameof(GetPlatformById), new { Id = platformReadDto, platformReadDto});
+            var x = nameof(GetPlatformById);
+            return Ok(new { Id = platformReadDto.Id, platformReadDto });
         }
     }
 }
